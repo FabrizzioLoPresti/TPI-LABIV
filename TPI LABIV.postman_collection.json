@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "ef9ec993-fe7e-49a1-9366-587cbb15228b",
+		"name": "TPI LABIV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "GET ALL Empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleados"
+							]
+						},
+						"description": "Reporte 1"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Empleados",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 1030,\r\n    \"nombre\": \"Lionel\",\r\n    \"apellido\": \"Messi\",\r\n    \"fechaNacimiento\": \"1983-03-21\",\r\n    \"fechaIngreso\": \"2010-10-02\",\r\n    \"idArea\": 1,\r\n    \"sueldoBruto\": 73000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleados"
+							]
+						},
+						"description": "Reporte 2"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Empleados - Error: Empleado Existe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 1010,\r\n    \"nombre\": \"Julio\",\r\n    \"apellido\": \"Roca\",\r\n    \"fechaNacimiento\": \"1984-09-12\",\r\n    \"fechaIngreso\": \"2001-10-02\",\r\n    \"idArea\": 1,\r\n    \"sueldoBruto\": 34000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleados"
+							]
+						},
+						"description": "Reporte 2"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Empleados - Error: Empleado Datos Incompletos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 4532,\r\n    \"nombre\": \"Julio\",\r\n    \"apellido\": \"\",\r\n    \"fechaNacimiento\": \"1984-09-12\",\r\n    \"fechaIngreso\": \"2001-10-02\",\r\n    \"idArea\": 1,\r\n    \"sueldoBruto\": 34000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"empleados"
+							]
+						},
+						"description": "Reporte 2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recibos",
+			"item": [
+				{
+					"name": "GET Recibos Legajo: 7777",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibos/7777",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibos",
+								"7777"
+							]
+						},
+						"description": "Reporte 4"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Recibos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 7777,\r\n    \"anio\": 2022,\r\n    \"mes\": 8,\r\n    \"sueldoBruto\": 45000,\r\n    \"jubilacion\": 1500,\r\n    \"obraSOcial\": 300,\r\n    \"fondoAltaComplejidad\": 2500,\r\n    \"montoAntiguedad\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibos"
+							]
+						},
+						"description": "Reporte 3"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Recibos - Error: Empleado inexistente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 64564,\r\n    \"anio\": 2022,\r\n    \"mes\": 6,\r\n    \"sueldoBruto\": 45000,\r\n    \"jubilacion\": 1500,\r\n    \"obraSOcial\": 300,\r\n    \"fondoAltaComplejidad\": 2500,\r\n    \"montoAntiguedad\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibos"
+							]
+						},
+						"description": "Reporte 3"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Recibos - Error: Recibo ya existente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"legajo\": 7777,\r\n    \"anio\": 2022,\r\n    \"mes\": 6,\r\n    \"sueldoBruto\": 45000,\r\n    \"jubilacion\": 1500,\r\n    \"obraSOcial\": 300,\r\n    \"fondoAltaComplejidad\": 2500,\r\n    \"montoAntiguedad\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/recibos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recibos"
+							]
+						},
+						"description": "Reporte 3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": []
+		},
+		{
+			"name": "GET Reporte",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"anio\": 2022,\r\n    \"mes\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reporte",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reporte"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
